@@ -10,11 +10,12 @@ require.config({
   }
 });
 
-require(["./js/router.js", "jquery"],
+require(["./js/router.js", "jquery", "Backbone"],
   (router) => {
     let App = {
       Initialize : () => {
         this.router = new router();
+        Backbone.history.start();
       }
     };
 

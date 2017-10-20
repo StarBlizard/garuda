@@ -16,7 +16,11 @@ module.exports = {
   
         console.log(tweets);
   
-        return res.status(200).redirect('/');
+        return res.status(200).send({
+          data : {
+            tweets : tweets
+          }
+        });
       });
   }
 };
