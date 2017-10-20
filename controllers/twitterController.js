@@ -14,13 +14,7 @@ module.exports = {
           });
         };
   
-        console.log(tweets);
-  
-        return res.status(200).send({
-          data : {
-            tweets : tweets
-          }
-        });
+        return res.status(200).send(tweets.statuses);
       });
   }
 };

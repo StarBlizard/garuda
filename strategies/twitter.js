@@ -34,7 +34,7 @@ module.exports = function(){
         .fetch()
         .then( user => {
           if(user){
-            return done(null, user.attributes);
+            return done(null,  profileData);
           }else{
             newUser
               .save()

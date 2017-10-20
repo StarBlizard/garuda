@@ -20,4 +20,4 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect : '/' }), usersController.granted);
 
 // Twitter feed
-app.get('/get-twits', authMiddleware.loggedIn, twitterController.feed);
+app.get('/tweets', authMiddleware.loggedIn, twitterController.feed);
