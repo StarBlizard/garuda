@@ -18,7 +18,8 @@
     "passport-local": "1.0.x",
     "passport-twitter": "1.0.x",
     "path": "^0.12.7",
-    "pg": "^7.3.0"
+    "pg": "^7.3.0",
+    "twitter": "^1.7.1"
   },
   "scripts": {
     "test": "app.js",

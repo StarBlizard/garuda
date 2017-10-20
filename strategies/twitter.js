@@ -16,11 +16,34 @@ module.exports = function(){
     },
     function(token, tokenSecret, profile, done){
 
-      console.log(profile);
 
-      // Login user if exists, else save it  
+      // Login user if exists, else save it
+      let profileData = {
+        username   : profile.username,
+        twitter_id : profile.id,
+        photo      : profile._json.profile_image_url,
+        headColor  : profile._json.profile_background_color,
+        headImage  : (profile._json.profile_background_image) ? profile._json.profile_background_image : "",
+        sideColor  : (profile._json.profile_side_bar_fill_color) ? profile._json.profile_side_bar_fill_color : "",
+        textColor  : profile._json.profile_text_color
+      };
+
+      let newUser = User.forge(profileData);
+
+      newUser
+        .fetch()
+        .then( user => {
+          if(user){
+            return done(null, user.attributes);
+          }else{
+            newUser
+              .save()
+              .then( user => {
+                return done(null, profileData);
+              });
+          };
+        });
         
-      return done(null, profile);
 	});
 
 };

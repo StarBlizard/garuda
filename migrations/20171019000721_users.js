@@ -1,11 +1,16 @@
-exports.up = function(knex, Promise) {
-  knex.schema.createTableIfNotExists('users', table => {
+exports.up = function(knex, Promise) {  
+  return knex.schema.createTableIfNotExists('users', table => {
     table.increments();
-    table.text("email");
+    table.text("username");
     table.text("twitter_id");
+    table.text("photo");
+    table.text("headColor");
+    table.text("headImage");
+    table.text("sideColor");
+    table.text("textColor");
   });
 };
 
 exports.down = function(knex, Promise) {
-   knex.schema.dropTable('users');
+  return knex.schema.dropTable('users');
 };
