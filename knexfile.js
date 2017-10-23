@@ -8,7 +8,7 @@ const nconf = require('nconf');
 module.exports = {
 
   development: {
-    client: 'pg',
-    connection: nconf.get('database').connection
+    client    : nconf.get('database:client'),
+    connection: nconf.get('database:connection')
   }
 };
