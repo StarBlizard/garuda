@@ -2,14 +2,14 @@
   
 define(["Backbone"], Backbone => {
   return Backbone.View.extend({
-  	initialize(){
-      if(window.location.pathname === '/home'){
-        require(["../app/views/container/tweets"], tweets => {
+  	initialize(opc){
+      if(opc.logged){
+        require(["../app/views/container/tweets/tweets"], tweets => {
           this.tweets = new tweets();
           this.render(this.tweets.$el); 
         });
       }else{
-        require(["../app/views/container/landing"], landing => {
+        require(["../app/views/container/landing/landing"], landing => {
           this.landing = new landing();
           this.render(this.landing.$el);
         })

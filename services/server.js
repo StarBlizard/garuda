@@ -8,6 +8,7 @@ const session 	   = require('express-session');
 const bodyParser   = require('body-parser');
 const path         = require('path');
 const passport 	   = require('./passport.js').passport;
+const Logger       = require('./winston.js').logger;
 
 module.exports = {
 
@@ -35,13 +36,13 @@ module.exports = {
 
 		// To log clients connections
 		this.app.use(function(req, res, next){
-			console.log('Incoming request: ', req.url, req.connection.remoteAddress);
+			Logger.info('Incoming request: ', req.url, req.connection.remoteAddress);
 			return next();
 		});
 
 		// To indicate the port to listen
 		this.app.listen(PORT, function(){
-			console.log('SERVER started on PORT', PORT);
+			Logger.info('[Server] Start server at PORT', PORT);
 		});
 	}
 

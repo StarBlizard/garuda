@@ -7,7 +7,7 @@ define(["Backbone"], Backbone => {
     id      : '#tweets',
 
   	initialize(){
-      require(["../app/collections/tweets", "../app/views/container/tweet"], (tweetsCollection, tweetView) => {
+      require(["../app/collections/tweets", "../app/views/container/tweets/tweet/tweet"], (tweetsCollection, tweetView) => {
         this.childConstructor = tweetView; 
         this.collection       = new tweetsCollection();
         this.collection.fetch();
