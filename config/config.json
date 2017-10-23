@@ -6,9 +6,9 @@
     "connection" : {
       "host"     : "127.0.0.1",
       "port"     : "5432",
-      "user"     : "postgres",
-      "password" : "centauri",
-      "database" : "garuda",
+      "user"     : "gtymdzvqlvzema",
+      "password" : "7872f18ac8861eb99132e43533d7c6f9ec96448c5d9b390e5460ce5467b26b31",
+      "database" : "de8sfalfr0r156",
       "charset"  : "utf8"
     }
   },
