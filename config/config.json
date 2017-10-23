@@ -1,5 +1,4 @@
 {
-  "PORT" : 80,
   "database" : {
     "client"     : "pg",
     "version"    : "9.6",
@@ -12,12 +11,11 @@
       "charset"  : "utf8"
     }
   },
-  "parse" : {
-    "json"       : {"params": {"limit":"50mb"}},
-    "urlencoded" : {"params": {"limit":"50mb","extended":true}
-    }
-  },
-  "domain" : "https://garuda-by-blizzard.herokuapp.com/",
+  "PORT" 	        : 80,
+  "api" 	        : "/api/v1",
+  "STORAGE_PATH"  : "storage/da4b9237bacccdf19c0760cab7aec4a8359010b0",
+  "jwtPrivateKey" : "secret",
+  "domain"        : "https://garuda-by-blizzard.herokuapp.com/",
   "twitter" : {
     "consumerKey"       : "2NIKq26Xbhdl5q1XAbPppw0mA",
     "consumerSecret"    : "5nX8HK7Nx6ioQ3lXCJ2Fs8LNTBgBaUolgECupJRMUL9rR7hnNn",
