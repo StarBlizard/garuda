@@ -17,7 +17,7 @@
     "urlencoded" : {"params": {"limit":"50mb","extended":true}
     }
   },
-  "domain" : "http://localhost/",
+  "domain" : "https://garuda-by-blizzard.herokuapp.com/",
   "twitter" : {
     "consumerKey"       : "2NIKq26Xbhdl5q1XAbPppw0mA",
     "consumerSecret"    : "5nX8HK7Nx6ioQ3lXCJ2Fs8LNTBgBaUolgECupJRMUL9rR7hnNn",
