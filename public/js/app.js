@@ -3,6 +3,7 @@
 require.config({
   baseUrl : 'js/lib',
   paths   : {
+    css        : "../plugins/css",
     text       : "../plugins/text",
     jquery     : "jquery",
     underscore : "underscore",
@@ -10,8 +11,8 @@ require.config({
   }
 });
 
-require(["./js/router.js", "jquery", "Backbone"],
-  (router) => {
+require(["./js/router.js", "jquery", "Backbone", "css!/css/bootstrap"],
+  router => {
     let App = {
       Initialize : () => {
         this.router = new router();

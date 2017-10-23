@@ -5,7 +5,7 @@ module.exports = {
   feed(req, res){
     Twitter
       .client
-      .get('search/tweets', { q: 'akshay', count : 10 }, (error, tweets, response) => {
+      .get('search/tweets', { q: req.session.passport.user.username, count : 10 }, (error, tweets, response) => {
         if(error){
           console.log(error);
           return res.status(500).send({
@@ -14,13 +14,7 @@ module.exports = {
           });
         };
   
-        console.log(tweets);
-  
-        return res.status(200).send({
-          data : {
-            tweets : tweets
-          }
-        });
+        return res.status(200).send(tweets.statuses);
       });
   }
 };
