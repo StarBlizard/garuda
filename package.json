@@ -3,7 +3,7 @@
   "name": "garuda",
   "version": "1.0.0",
   "description": "Twitter authentication and feed service.",
-  "main": "app.js",
+  "main": "node app.js",
   "dependencies": {
     "bookshelf": "0.10.x",
     "cookie-parse": "0.4.x",
@@ -23,8 +23,8 @@
     "winston": "^2.4.0"
   },
   "scripts": {
-    "test": "app.js",
-    "start": "app.js"
+    "test": "node app.js",
+    "start": "node app.js"
   },
   "engines": {
     "node": "6.11.2"
