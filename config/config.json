@@ -4,7 +4,7 @@
     "client"     : "pg",
     "version"    : "9.6",
     "connection" : {
-      "host"     : "127.0.0.1",
+      "host"     : "postgres://gtymdzvqlvzema:7872f18ac8861eb99132e43533d7c6f9ec96448c5d9b390e5460ce5467b26b31@ec2-54-243-47-252.compute-1.amazonaws.com:5432/de8sfalfr0r156",
       "port"     : "5432",
       "user"     : "gtymdzvqlvzema",
       "password" : "7872f18ac8861eb99132e43533d7c6f9ec96448c5d9b390e5460ce5467b26b31",
