@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "app.js",
-    "start": "nodemon app.js"
+    "start": "app.js"
   },
   "engines": {
     "node": "6.11.2"
