@@ -1,8 +1,9 @@
 'use strict';
   
-define(["Backbone"], Backbone => {
+define(["Backbone", "text!/js/app/views/container/tweets/tweet/tweet.html", "css!/js/app/views/container/tweets/tweet/tweet"], (Backbone, template) => {
   return Backbone.View.extend({
-    tagName   : 'p',
+    template  : _.template(template),
+    tagName   : 'div',
     className : 'tweet',
 
   	initialize(){
@@ -11,8 +12,9 @@ define(["Backbone"], Backbone => {
 
     render(model){
       let data = this.model.attributes;
+      console.log(this.model);
 
-      this.$el.append("<div>"+ data.source +"<p>" + data.text + "</p></div>");
+      this.$el.append(this.template(data));
     }
   });
 });

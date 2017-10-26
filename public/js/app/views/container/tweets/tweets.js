@@ -1,14 +1,16 @@
 'use strict';
   
-define(["Backbone"], Backbone => {
+define(["Backbone", "css!/js/app/views/container/tweets/tweets"], Backbone => {
   return Backbone.View.extend({
     url     : '/tweets',
     tagName : 'section',
     id      : '#tweets',
 
   	initialize(){
-      require(["../app/collections/tweets", "../app/views/container/tweets/tweet/tweet"], (tweetsCollection, tweetView) => {
+      require(["../app/collections/tweets", "../app/views/container/tweets/tweet/tweet", "../app/views/container/tweets/newTweet/newTweet"], (tweetsCollection, tweetView, newTweet) => {
         this.childConstructor = tweetView; 
+        this.newTweet         = new newTweet();
+
         this.collection       = new tweetsCollection();
         this.collection.fetch();
 
@@ -21,6 +23,7 @@ define(["Backbone"], Backbone => {
         model : model
       });
 
+      this.$el.append(this.newTweet);
       this.$el.append(tweet.$el);
     }
   });

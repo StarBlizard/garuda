@@ -16,19 +16,20 @@ module.exports = function(){
     },
     function(token, tokenSecret, profile, done){
 
-
       // Login user if exists, else save it
       let profileData = {
+        displayName: profile.displayName,
         username   : profile.username,
         twitter_id : profile.id,
         photo      : profile._json.profile_image_url,
         headColor  : profile._json.profile_background_color,
         headImage  : (profile._json.profile_background_image) ? profile._json.profile_background_image : "",
         sideColor  : (profile._json.profile_side_bar_fill_color) ? profile._json.profile_side_bar_fill_color : "",
-        textColor  : profile._json.profile_text_color
+//        textColor  : profile._json.profile_text_color
+        textColor  : "9966ff"
       };
 
-      let newUser = User.forge(profileData);
+      let newUser = User.forge({ username : profileData.username });
 
       newUser
         .fetch()

@@ -5,6 +5,9 @@ require('nconf').argv().env().file({ file: 'config/config.json' });
 
 const nconf = require('nconf');
 
+let connection = nconf.get('PORT');
+console.log(connection);
+
 module.exports = {
 
   development: {

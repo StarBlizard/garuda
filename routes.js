@@ -24,3 +24,5 @@ app.get('/tweets', authMiddleware.loggedIn, twitterController.feed);
 
 // User
 app.get('/user', authMiddleware.loggedIn, usersController.getUser);
+app.get('/friends', authMiddleware.loggedIn, twitterController.getFriends);
+app.post('/logout', authMiddleware.loggedIn, usersController.logout);
