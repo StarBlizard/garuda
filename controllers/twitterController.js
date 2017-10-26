@@ -5,7 +5,7 @@ module.exports = {
   feed(req, res){
     Twitter
       .client
-      .get('search/tweets', { q: req.session.passport.user.username, count : 10 }, (error, tweets, response) => {
+      .get('statuses/user_timeline', { user_id: req.session.passport.user.twitter_id, count : 20 }, (error, tweets, response) => {
         if(error){
           console.log(error);
           return res.status(500).send({
@@ -14,7 +14,15 @@ module.exports = {
           });
         };
   
-        return res.status(200).send(tweets.statuses);
+        return res.status(200).send(tweets);
       });
+  },
+
+  getFriends(req, res){
+    Twitter
+      .client
+      .get('friends/list', { user_id: req.session.passport.user.twitter_id }, (error, friends, response) => {
+        return res.send(friends.users);
+      } )
   }
 };

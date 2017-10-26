@@ -1,6 +1,6 @@
 'use strict';
 
-define(["Backbone", "../../app/models/user"], (Backbone, User) => {
+define(["Backbone", "models/user"], (Backbone, User) => {
   return Backbone.Router.extend({
 
     model      : new User(),
@@ -10,16 +10,21 @@ define(["Backbone", "../../app/models/user"], (Backbone, User) => {
         .fetch()
         .then( user => {
           if(user){
-            require(["../app/views/container/container", "../app/views/sidebar/sidebar"], ( container, sidebar ) => { 
+            require(["views/container/container", "views/sidebar/sidebar", "views/footer/footer"], ( container, sidebar, footer ) => { 
               this.container = new container({
                 el     : "#container",
                 logged : true
+              });
+
+              this.footer    = new footer({
+                el : "#footer"
               });
     
               this.sidebar = new sidebar({
                 el    : "#sidebar",
                 model : user
               });
+
             });
           }
         })
